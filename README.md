@@ -1,7 +1,7 @@
 <div align="center">
-  <a href="https://cheery-travesseiro-81ba1d.netlify.app/">
-    <h1>Movie DB</h1>
-  </a>
+  <h1 align="center">
+    <a href="https://cheery-travesseiro-81ba1d.netlify.app">Movie DB</a>
+</h1>
   <h2> __movie repository using only ol' JS__</h2>
 </div>
 

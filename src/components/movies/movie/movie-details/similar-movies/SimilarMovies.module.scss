@@ -1,0 +1,32 @@
+@use '../../../../../styles/typography';
+@use '../../../../../styles/colors';
+
+.similarMovies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.similarMovie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.sectionTitle {
+  @extend %h4;
+  margin-bottom: 16px;
+}
+
+.similarMovieTitle {
+  @extend %h6;
+  white-space: pre-wrap;
+  color: colors.$grey-600;
+}
+
+.similarMovieImg {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}

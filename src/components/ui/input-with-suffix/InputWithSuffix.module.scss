@@ -1,0 +1,27 @@
+@use '../../../styles/colors'; 
+@use '../../../styles/input';
+@use '../../../styles/typography';
+
+.inputWithSuffix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @extend %large-body-text;
+
+  @include input.defaultInput();
+  @include input.borderDefaultStates();
+}
+
+.input {
+  flex-grow: 1;
+  border: none;
+  background-color: inherit;
+  outline: none;
+}
+
+.suffixIcon {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  min-height: 24px;
+}

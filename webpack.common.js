@@ -15,14 +15,18 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\.svg$/,
-        use: ['file-loader'],
+        test: /\.svg$/i,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          mimetype: 'image/svg+xml',
+        },
       },
       {
         test: /\.ts$/,
-        exclude: /node_modules/,
+        exclude: /node_modules|__tests__/,
         use: {
-          loader: 'ts-loader',
+          loader: 'swc-loader',
         },
       },
     ],
@@ -44,6 +48,7 @@ module.exports = {
       '@models': path.resolve(__dirname, 'src/models'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+      '@mocks': path.resolve(__dirname, 'src/mocks'),
       '@lib': path.resolve(__dirname, 'src/lib'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@services': path.resolve(__dirname, 'src/services'),

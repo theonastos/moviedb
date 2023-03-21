@@ -1,3 +1,3 @@
-const { JSDOM } = require('jsdom');
+import '@testing-library/jest-dom';
 
-global.DOMParser = new JSDOM().window.DOMParser;
+export {};

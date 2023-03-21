@@ -24,15 +24,12 @@ const MovieTrailer = ({ movieId }: MovieTrailerProps) => {
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
-      <span id="id-here">${id}</span>
     </div>
   `;
 
   getMovieTrailer(movieId).then((data) => {
     statePubSub.publish({ trailerId: data!, loading: false });
   });
-
-  console.log(state);
 
   statePubSub.subscribe((newState) => {
     if (newState.loading) {

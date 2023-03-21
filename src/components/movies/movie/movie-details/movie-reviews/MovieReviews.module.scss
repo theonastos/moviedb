@@ -1,0 +1,46 @@
+@use '../../../../../styles/typography';
+@use '../../../../../styles/colors';
+
+$grid-gap: 8px;
+
+.review {
+  @extend %main-body-text;
+  display: grid;
+  grid-row-gap: $grid-gap;
+  grid-column-gap: $grid-gap;
+  align-items: end;
+  grid-template-columns: repeat(2, min-content) 1fr;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas: "icon author date"
+    "content content content"
+}
+
+.icon {
+  grid-area: icon;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+}
+
+.author {
+  grid-area: author;
+  @extend %h6;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.date {
+  grid-area: date;
+  margin-bottom: 8px;
+  @extend %small-body-text;
+  color: colors.$grey-500;
+}
+
+.content {
+  grid-area: content;
+  @extend %main-body-text;
+  color: colors.$grey-600;
+  margin-bottom: 16px;
+}

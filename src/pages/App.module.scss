@@ -1,0 +1,73 @@
+@use '../styles/variables';
+@use '../styles/colors';
+
+$fadeElementHeight: 60px;
+
+@keyframes slideFromRight {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes slideToRight {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.appContainer {
+  display: flex;
+  flex: 1;
+}
+
+.leftSide {
+  flex: 1 1 70%;
+}
+
+.searchIcon {
+  path {
+    fill: colors.$white;
+  }
+}
+
+.rightSide {
+  padding: variables.$padding-24;
+  display: none;
+  animation: slideFromRight .25s linear;
+  &.open {
+    display: block;
+  }
+  position: sticky;
+  background-color: colors.$white;
+  top: 54px;
+  margin: 54px variables.$margin-32 variables.$margin-32 0;
+  box-shadow: 0 2px 5px rgb(51 62 73 / 10%);
+  height: calc(100vh - 86px);
+  flex: 1 1 30%;
+  overflow-y: auto;
+}
+
+.searchBarContainer {
+  position: sticky;
+  top: 0;
+  padding: 54px 0 0;
+  background: colors.$body;
+  z-index: 1;
+  margin: 0 auto;
+  margin: 0 variables.$margin-32 0 variables.$margin-56;
+  &::after {
+    content: '';
+    display: block;
+    left: 0;
+    bottom: -$fadeElementHeight;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    background-image: linear-gradient(to top, rgb(246, 246, 249, 0) 0%, rgb(246, 246, 249, 1) 70%);
+    width: 100%;
+    height: $fadeElementHeight;
+  }
+}
+
+.moviesContainer {
+  margin: 0 variables.$margin-36 0 variables.$margin-64;
+  margin-top: calc($fadeElementHeight - 10px);
+}

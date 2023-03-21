@@ -1,0 +1,60 @@
+@use '../../../../styles/typography';
+@use '../../../../styles/variables';
+@use '../../../../styles/colors';
+
+$grid-gap: 12px;
+
+.movieListing {
+  background-color: colors.$white;
+
+  &:hover {
+    background-color: colors.$grey-100;
+  }
+
+  @extend %main-body-text;
+  cursor: pointer;
+
+  padding: variables.$padding-12;
+  background: none !important;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+
+  display: grid;
+  grid-row-gap: $grid-gap;
+  grid-column-gap: $grid-gap;
+  grid-template-columns: 154px 539px 1fr;
+  grid-template-rows: min-content min-content 1fr;
+  grid-template-areas: "img title votes"
+    "img releaseDate votes"
+    "img overview votes"
+}
+
+.img {
+  grid-area: img;
+}
+.title {
+  grid-area: title;
+  @extend %h5;
+}
+.releaseDate {
+  grid-area: releaseDate;
+  @extend %small-body-text;
+  color: colors.$grey-500;
+}
+.votes {
+  grid-area: votes;
+  white-space: nowrap;
+  text-align: end;
+}
+.overview {
+  grid-area: overview;
+}
+
+.content {
+  @extend %main-body-text;
+  background-color: colors.$primary-400;
+  color: colors.$white;
+  padding: variables.$padding-12;
+}

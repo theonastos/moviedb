@@ -24,6 +24,7 @@ const MovieTrailer = ({ movieId }: MovieTrailerProps) => {
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       />
+      <span id="id-here">${id}</span>
     </div>
   `;
 
@@ -31,9 +32,13 @@ const MovieTrailer = ({ movieId }: MovieTrailerProps) => {
     statePubSub.publish({ trailerId: data!, loading: false });
   });
 
+  console.log(state);
+
   statePubSub.subscribe((newState) => {
-    if (newState.trailerId) {
-      replaceElementWithId(elementId, getTemplate(newState.trailerId));
+    if (newState.loading) {
+      // render loading
+    } else {
+      replaceElementWithAttr(`[data-id="${elementId}"]`, getTemplate(newState.trailerId));
     }
     if (state.trailerId !== newState.trailerId) {
       state.trailerId = newState.trailerId;

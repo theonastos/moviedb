@@ -1,0 +1,45 @@
+@use 'mixins';
+
+%h1 {
+  @include mixins.heading(3.125rem, 3.938rem);
+}
+
+%h2 {
+  @include mixins.heading(2.375rem, 3rem);
+}
+
+%h3 {
+  @include mixins.heading(1.75rem, 2.188rem);
+}
+
+%h4 {
+  @include mixins.heading(1.313rem, 1.625rem);
+}
+
+%h5 {
+  @include mixins.heading(1rem, 1.375rem);
+}
+
+%h6 {
+  @include mixins.heading(0.75rem, 0.938rem);
+}
+
+%huge-body-text {
+  @include mixins.body-text(1.5rem, 1.875rem);
+}
+
+%xlarge-body-text {
+  @include mixins.body-text(1.25rem, 1.563rem);
+}
+
+%large-body-text {
+  @include mixins.body-text(1rem, 1.25rem);
+}
+
+%main-body-text {
+  @include mixins.body-text(0.875rem, 1.125rem);
+}
+
+%small-body-text {
+  @include mixins.body-text(0.75rem, 0.938rem);
+}

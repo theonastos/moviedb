@@ -1,0 +1,48 @@
+@use '../../styles/typography';
+@use '../../styles/colors';
+@use '../../styles/variables';
+
+.moviesWrap {
+  transition: display .2s ease;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: start;
+  box-shadow: 0 2px 5px rgb(51 62 73 / 10%);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.movieElement {
+  width: 100%;
+  background-color: colors.$white;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lastElement {
+  position: relative;
+  bottom: 1px;
+}
+
+.loadingContainer {
+  display: none;
+  &.loading {
+    display: flex;
+  }
+  align-items: center;
+  justify-content: center;
+  margin: variables.$margin-32 auto;
+}
+
+.noMovies {
+  @extend %h4;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: variables.$margin-32 auto;
+}

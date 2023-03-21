@@ -1,0 +1,32 @@
+@use 'colors';
+@use 'mixins';
+@use 'typography';
+
+html,
+body {
+  margin: 0;
+  background: colors.$white;
+  font-family: BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-size: 13px;
+  @extend %main-body-text;
+  @include mixins.desktop-medium {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

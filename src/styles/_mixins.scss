@@ -1,0 +1,47 @@
+@use 'media-queries';
+
+//  Typography Mixins
+// ------------------------------------------------
+@mixin heading($font-size, $line-height) {
+  font-style: normal;
+  font-weight: bold;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: 0;
+}
+
+@mixin body-text($font-size, $line-height) {
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: 0;
+}
+
+// Media Queries Mixins
+// ------------------------------------------------
+@mixin mobile {
+  @media (min-width: #{media-queries.$mobile}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{media-queries.$tablet}) {
+    @content;
+  }
+}
+@mixin desktop-medium {
+  @media (min-width: #{media-queries.$desktop-md}) {
+    @content;
+  }
+}
+@mixin desktop-large {
+  @media (min-width: #{media-queries.$desktop-lg}) {
+    @content;
+  }
+}
+@mixin desktop-xlarge {
+  @media (min-width: #{media-queries.$desktop-xl}) {
+    @content;
+  }
+}

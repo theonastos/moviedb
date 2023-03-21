@@ -1,0 +1,49 @@
+{
+  "name": "movie-db",
+  "version": "1.0.0",
+  "description": "A modern single-page app built without a full-fledged framework",
+  "main": "index.ts",
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest"
+  },
+  "repository": {},
+  "author": "Thodoris Nastos <theonastos@gmail.com>(https://github.com/theonastos)",
+  "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "autoprefixer": "^10.4.14",
+    "compression-webpack-plugin": "^10.0.0",
+    "css-loader": "^6.7.3",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.5.0",
+    "mini-css-extract-plugin": "^2.7.3",
+    "node-sass": "^8.0.0",
+    "prettier": "^2.8.4",
+    "sass": "^1.59.3",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
+  }
+}

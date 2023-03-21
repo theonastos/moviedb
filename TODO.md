@@ -1,0 +1,7 @@
+- add tests
+- try catch for requests ✅
+- race conditions ✅
+- unsubscribe from observables 
+- remove data-testid from production build
+- accessibility and check for redundant dom elements
+- movie details card (case where there are no reviews/video/similar at the same time)

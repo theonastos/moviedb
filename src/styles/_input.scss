@@ -1,0 +1,44 @@
+@use 'colors';
+@use 'typography';
+
+$placeholder-color: colors.$grey-400;
+
+@mixin borderDefaultStates() {
+  transition: border-color .1s ease-in;
+  border-color: colors.$primary-200;
+  &:hover {
+    border-color: colors.$primary-300;
+  }
+  &:focus-within {
+    border-color: colors.$primary-500-base;
+  }
+  &:active, &:focus {
+    border-color: colors.$primary-500-base;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+$default-padding-y: 12px;
+$default-padding-x: 20px;
+
+@mixin defaultInput() {
+  @extend %large-body-text;
+  width: 100%;
+  padding: $default-padding-y $default-padding-x;
+  border-radius: 8px;
+  border-width: 2px;
+  border-style: solid;
+  color: colors.$grey-600;
+  background-color: colors.$grey-050;
+  // placeholder
+  $placeholder-color: colors.$grey-400;
+  &::placeholder {
+    color: $placeholder-color;
+  }
+  // TODO cross check if postCSS takes care of that
+  &:-ms-input-placeholder {
+   color: $placeholder-color;
+  }
+}

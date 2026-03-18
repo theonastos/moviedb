@@ -1,15 +1,15 @@
 # Movie DB
 
-A pet project to explore building a React-like framework from scratch using vanilla TypeScript.
+A pet project exploring how to build a React-like framework from scratch using vanilla TypeScript.
 
-Uses [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction) as a playground to test the framework.
+[Live Demo](https://cheery-travesseiro-81ba1d.netlify.app) · [The Movie DB API](https://developers.themoviedb.org/3)
 
 ## The "Framework"
 
-- **Tagged template literals** (`html`) for declarative UI
-- **Functional components** returning `DocumentFragment`
-- **Data-attribute event binding** (`data-on-click="handler"`)
-- **Pub/sub state management** for reactive updates
+- **Declarative UI** — Tagged template literals (`html`\`...\``)
+- **Components** — Functions returning `DocumentFragment`
+- **Event binding** — Data attributes (`data-on-click="handler"`)
+- **State** — Pub/sub pattern for reactive updates
 
 ```ts
 const MyComponent = ({ title }) => {

@@ -1,41 +1,31 @@
-<div align="center">
-  <h1 align="center">
-    <a href="https://cheery-travesseiro-81ba1d.netlify.app">Movie DB</a>
-</h1>
-  <h2> __movie repository using only ol' JS__</h2>
-</div>
+# Movie DB
 
+A pet project to explore building a React-like framework from scratch using vanilla TypeScript.
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+Uses [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction) as a playground to test the framework.
 
-Movie DB is a simple SPA that uses the [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction) to fetch movies and display them in a list. It also allows you to search for movies and view their details.
+## The "Framework"
 
-## To run locally
+- **Tagged template literals** (`html`) for declarative UI
+- **Functional components** returning `DocumentFragment`
+- **Data-attribute event binding** (`data-on-click="handler"`)
+- **Pub/sub state management** for reactive updates
 
-```sh
-yarn
-yarn start
+```ts
+const MyComponent = ({ title }) => {
+  const template = html`<button data-on-click="onClick">${title}</button>`;
+  const onClick = () => console.log('clicked');
+  return createElement(template, { onClick });
+};
 ```
 
-## To run tests
+## Lighthouse
+
+![Lighthouse scores](./lighthouse.png)
+
+## Running locally
 
 ```sh
-yarn test
+yarn && yarn start
 ```
-
-## To build
-
-```sh
-yarn build
-```
-
-## Tools used
-
-- [Webpack](https://webpack.js.org/) (for bundling)
-- [Sass](https://sass-lang.com/)
-- [swc](https://swc.rs/) (for the speed of compiling)
-- Jest & Testing library for testing
-- [ESLint](https://eslint.org/) (for linting)
-- [Prettier](https://prettier.io/) (for code formatting)
-- [Typescript](https://www.typescriptlang.org/) (for type checking)
 
